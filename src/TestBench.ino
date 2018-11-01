@@ -6,7 +6,7 @@ const int D1 = 11; // Red wire
 const int D2 = 10; // Gray wire
 const int EN = 8; // Yellow wire
 int count = 0;
-int message; 
+int message;
 
 // 4 other wires: Orange-Red= Vin, Black-Blue = Ground, White = Out2, Brown = Out1
 void setup() {
@@ -46,14 +46,13 @@ void loop() {
       digitalWrite(IN2, 1);
       digitalWrite(EN,1);
       Serial.println("Reverse"); //Prints "Reverse"
+
     }
 
     if(message == 's'){ //'s' car stops
       digitalWrite(EN,0);
       Serial.println("Stop"); //Prints "Stop"
+      Serial.println("Stop");
     }
   }
-
-
-
 }
