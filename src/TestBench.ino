@@ -13,14 +13,14 @@ void setup() {
   // put your setup code here, to run once:
   Serial.begin(9600);
 
-  pinMode(IN1, OUTPUT);
+  pinMode(IN1, OUTPUT); 
   pinMode(IN2, OUTPUT);
   pinMode(D1, OUTPUT);
   pinMode(D2, OUTPUT);
   pinMode(EN, OUTPUT);
 
   digitalWrite(EN,0); // Settings for intial conditions -> stationary car
-  digitalWrite(D2,1);
+  digitalWrite(D2,1); 
   digitalWrite(D1,0);
   digitalWrite(IN1,1);
   digitalWrite(IN2,0);
@@ -29,7 +29,7 @@ void setup() {
 }
 
 void loop() {
-  // put your main code here, to run repeatedly:
+  // put your main code here, to run repeatedly
 
   if(Serial.available() > 0){
     message = Serial.read();
@@ -38,22 +38,21 @@ void loop() {
       digitalWrite(IN1, 1);
       digitalWrite(IN2, 0);
       digitalWrite(EN, 1);
-      Serial.println("Forward");
+      Serial.println("Forward"); //Prints "Forward"
     }
 
     if(message == 'r'){ //'r' car moves reverse
       digitalWrite(IN1, 0);
       digitalWrite(IN2, 1);
       digitalWrite(EN,1);
-      Serial.println("Reverse");
+      Serial.println("Reverse"); //Prints "Reverse"
+
     }
 
     if(message == 's'){ //'s' car stops
       digitalWrite(EN,0);
+      Serial.println("Stop"); //Prints "Stop"
       Serial.println("Stop");
     }
   }
-
-
-
 }
